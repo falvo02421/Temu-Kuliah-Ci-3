@@ -42,4 +42,12 @@ class Dashboard_model extends CI_Model{
 	    $this->db->where('nis', $nis);
 	    $this->db->update('siswa', $data); // Untuk mengeksekusi perintah update data
 	}
+
+	public function getsoal() {
+        $this->db->select('soal_tryout.id_soal, soal_tryout.bobot, mapel.nama')
+         ->from('soal_tryout')
+         ->join('mapel', 'soal_tryout.id_mapel = mapel.id_mapel');
+		 $query = $this->db->get();
+		  return $query->result();
+	}
 }

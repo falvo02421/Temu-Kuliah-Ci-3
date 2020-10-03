@@ -1,10 +1,15 @@
 <?php
 class Login_model extends CI_Model{
     //cek username dan password admin
-    function auth_admin($username,$password){
-        $query=$this->db->query("SELECT * FROM login_user WHERE username='$username' AND password=MD5('$password') LIMIT 1");
-        return $query;
-    }
+    public function cek_user($data) {
+            $query = $this->db->get_where('login_user', $data);
+            return $query;
+        }
+
+    public function cek_siswa($data) {
+            $query = $this->db->get_where('siswa', $data);
+            return $query;
+        }
  
     //cek nis dan password siswa
     function auth_siswa($username,$password){

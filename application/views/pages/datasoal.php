@@ -408,7 +408,7 @@
                         </div>            <div class="row">
                             <div class="col-lg-12">
                                 <div class="main-card mb-3 card">
-                                    <div class="card-body"><h5 class="card-title">Data Siswa</h5>
+                                    <div class="card-body"><h5 class="card-title">Data Soal</h5>
                                         <!-- <button type="button" class="btn-shadow btn btn-info">
                                             <span class="opacity-7">
                                                 <i class="fa fa-business-time fa-w-20"></i>
@@ -420,22 +420,22 @@
                                                 <thead>
                                                 <tr>
                                                     <th>#</th>
-                                                    <th>nis</th>
-                                                    <th>nama</th>
-                                                    <th>email</th>
+                                                    <th>id</th>
+                                                    <th>mata pelajaran</th>
+                                                    <th>bobot</th>
                                                     <th>Action</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
                                                 <?php
-                                                  if( ! empty($siswa)){ 
-                                                    $no=1; foreach($siswa as $data){
+                                                  if( ! empty($soal)){ 
+                                                    $no=1; foreach($soal as $data){
                                                       echo "<tr>
                                                       <td>".$no++."</td>
-                                                      <td>".$data->nis."</td>
+                                                      <td>".$data->id_soal."</td>
                                                       <td>".$data->nama."</td>
-                                                      <td>".$data->pass."</td>
-                                                      <td><a href='".base_url("index.php/dashboard/deletesiswa/".$data->nis)."'>Hapus</a></td>
+                                                      <td>".$data->bobot."</td>
+                                                      <td><a href=''>Hapus</a></td>
                                                       </tr>";
                                                     }
                                                   }else{ // Jika data siswa kosong
@@ -451,3 +451,4 @@
                         </div>
                        
                     </div>
+                    

@@ -52,7 +52,8 @@
               <div class="d-block d-lg-none ml-md-0 mr-auto"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
 
               <ul class="site-menu js-clone-nav d-none d-lg-block">
-                <li><a href="<?php echo base_url().'index.php/login/logout'?>">Logout</a></li>
+                <li><?php echo $this->session->userdata('username'); ?></li>
+                <li><a href="<?php echo base_url().'index.php/page/logout'?>">Logout</a></li>
               </ul>
             </nav>
 

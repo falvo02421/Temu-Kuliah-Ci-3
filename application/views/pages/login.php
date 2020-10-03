@@ -48,7 +48,7 @@
           </div>
           <div class="col-md-5 mb-5">
             <h3 class="mb-5">Login</h3>
-            <form action="<?php echo base_url().'index.php/login/auth'?>" method="post" class="bg-white">
+            <form action="<?php echo base_url().'index.php/login/auth_siswa'?>" method="post" class="bg-white">
               
               <div class="">
                 <div class="form-group row">

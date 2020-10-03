@@ -6,11 +6,17 @@ class Dashboard extends CI_Controller {
 	function __construct(){
 	    parent:: __construct();    
 	    $this->load->model('dashboard_model');
+      if ($this->session->userdata('username')=="") {
+        redirect('login');
+      }
     } 
 
     public function siswa() {
+      $data['username'] =$this->session->userdata('username');
     	$data['siswa'] = $this->dashboard_model->getsiswa();
-    	$this->load->view('pages/datasiswa', $data);
+      $this->load->view('templates/header_dashboard');
+      $this->load->view('pages/datasiswa', $data);
+      $this->load->view('templates/footer_dashboard');
     }
 
     public function deletesiswa($nis){
@@ -29,4 +35,12 @@ class Dashboard extends CI_Controller {
 	    $data['siswa'] = $this->dashboard_model->siswa_by($nis);
 	    $this->load->view('dashboard/siswa', $data);
   	}
+
+    public function soal() {
+      $data['username'] =$this->session->userdata('username');
+      $data['soal'] = $this->dashboard_model->getsoal();
+      $this->load->view('templates/header_dashboard');
+      $this->load->view('pages/datasoal', $data);
+      $this->load->view('templates/footer_dashboard');
+    }
 }
